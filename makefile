@@ -33,7 +33,7 @@ all: $(LIBRARY)
 $(LIBRARY): $(OBJECTS)
 	$(AR) $(ARFLAGS) $@ $(OBJECTS)
 
-$(OBJDIR)/%.o: %.c $(DIRS)
+$(OBJDIR)/%.o: %.c | $(DIRS)
 	$(CC) $(CFLAGS) -c -o $@ $<
 
 $(DIRS):
