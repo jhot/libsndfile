@@ -1,11 +1,9 @@
-# TODO: fix clean target
-# TODO: create directories
 CC=gcc
 CFLAGS=-I. -Wall
 OBJDIR=obj
 BINDIR=bin
 
-DIRS=$(OBJDIR) $(addprefix $(OBJDIR)/, GSM610, G72x)
+DIRS=$(OBJDIR) $(addprefix $(OBJDIR)/, GSM610 G72x) $(BINDIR)
 
 AR=ar
 ARFLAGS=cvq
@@ -35,12 +33,12 @@ all: $(LIBRARY)
 $(LIBRARY): $(OBJECTS)
 	$(AR) $(ARFLAGS) $@ $(OBJECTS)
 
-$(OBJDIR)/%.o: %.c
+$(OBJDIR)/%.o: %.c $(DIRS)
 	$(CC) $(CFLAGS) -c -o $@ $<
 
-dirs:
+$(DIRS):
 	mkdir -p $@
 
 clean:
-	rm *.o
-	rm libsndfile.a
+	rm -rf $(OBJDIR)
+	rm -rf $(BINDIR)
