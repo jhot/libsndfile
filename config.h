@@ -213,7 +213,11 @@
 #define PACKAGE_VERSION "1.0.25"
 
 /* Set to maximum allowed value of sf_count_t type. */
+#ifdef __LP64__
+#define SF_COUNT_MAX 0x7FFFFFFFFFFFFFFFLL
+#else
 #define SF_COUNT_MAX 0x7FFFFFFF
+#endif
 
 /* The size of `double', as computed by sizeof. */
 #define SIZEOF_DOUBLE 8
@@ -228,34 +232,66 @@
 #define SIZEOF_INT64_T 8
 
 /* The size of `loff_t', as computed by sizeof. */
+#ifdef __LP64__
+/* #undef SIZEOF_LOFF_T */
+#else
 #define SIZEOF_LOFF_T 8
+#endif
 
 /* The size of `long', as computed by sizeof. */
+#ifdef __LP64__
+#define SIZEOF_LONG 8
+#else
 #define SIZEOF_LONG 4
+#endif
 
 /* The size of `long long', as computed by sizeof. */
 #define SIZEOF_LONG_LONG 8
 
 /* The size of `off64_t', as computed by sizeof. */
+#ifdef __LP64__
+/* #undef SIZEOF_OFF64_T */
+#else
 #define SIZEOF_OFF64_T 8
+#endif
 
 /* The size of `off_t', as computed by sizeof. */
+#ifdef __LP64__
+#define SIZEOF_OFF_T 8
+#else
 #define SIZEOF_OFF_T 4
+#endif
 
 /* Set to sizeof (long) if unknown. */
+#ifdef __LP64__
+#define SIZEOF_SF_COUNT_T 8
+#else
 #define SIZEOF_SF_COUNT_T 4
+#endif
 
 /* The size of `short', as computed by sizeof. */
 #define SIZEOF_SHORT 2
 
 /* The size of `size_t', as computed by sizeof. */
+#ifdef __LP64__
+#define SIZEOF_SIZE_T 8
+#else
 #define SIZEOF_SIZE_T 4
+#endif
 
 /* The size of `ssize_t', as computed by sizeof. */
+#ifdef __LP64__
+#define SIZEOF_SSIZE_T 8
+#else
 #define SIZEOF_SSIZE_T 4
+#endif
 
 /* The size of `void*', as computed by sizeof. */
+#ifdef __LP64__
+#define SIZEOF_VOIDP 8
+#else
 #define SIZEOF_VOIDP 4
+#endif
 
 /* The size of `wchar_t', as computed by sizeof. */
 #define SIZEOF_WCHAR_T 4

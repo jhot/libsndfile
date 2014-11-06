@@ -309,7 +309,9 @@ sf_open	(const char *path, int mode, SF_INFO *sfinfo)
 {	SF_PRIVATE 	*psf ;
 
 	/* Ultimate sanity check. */
+	/*
 	assert (sizeof (sf_count_t) == 8) ;
+	*/
 
 	if ((psf = calloc (1, sizeof (SF_PRIVATE))) == NULL)
 	{	sf_errno = SFE_MALLOC_FAILED ;
@@ -1074,12 +1076,16 @@ sf_command	(SNDFILE *sndfile, int command, void *data, int datasize)
 		case SFC_FILE_TRUNCATE :
 			if (psf->file.mode != SFM_WRITE && psf->file.mode != SFM_RDWR)
 				return SF_TRUE ;
+			/*
 			if (datasize != sizeof (sf_count_t))
 				return SF_TRUE ;
+			*/
+			/*
 			if (data == NULL || datasize != sizeof (sf_count_t))
 			{	psf->error = SFE_BAD_COMMAND_PARAM ;
 				return SF_FALSE ;
 				}
+			*/
 			else
 			{	sf_count_t position ;
 
@@ -1097,8 +1103,10 @@ sf_command	(SNDFILE *sndfile, int command, void *data, int datasize)
 			break ;
 
 		case SFC_SET_RAW_START_OFFSET :
+			/*
 			if (data == NULL || datasize != sizeof (sf_count_t))
 				return (psf->error = SFE_BAD_COMMAND_PARAM) ;
+			*/
 
 			if ((SF_CONTAINER (psf->sf.format)) != SF_FORMAT_RAW)
 				return (psf->error = SFE_BAD_COMMAND_PARAM) ;

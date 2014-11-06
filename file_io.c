@@ -479,8 +479,10 @@ psf_get_filelen_fd (int fd)
 	** Sanity check.
 	** If everything is OK, this will be optimised out.
 	*/
+	/*
 	if (sizeof (statbuf.st_size) == 4 && sizeof (sf_count_t) == 8)
 		return (sf_count_t) -SFE_BAD_STAT_SIZE ;
+	*/
 
 	if (fstat (fd, &statbuf) == -1)
 		return (sf_count_t) -1 ;
@@ -496,8 +498,10 @@ psf_ftruncate (SF_PRIVATE *psf, sf_count_t len)
 	if (len < 0)
 		return -1 ;
 
+	/*
 	if ((sizeof (off_t) < sizeof (sf_count_t)) && len > 0x7FFFFFFF)
 		return -1 ;
+	*/
 
 	retval = ftruncate (psf->file.filedes, len) ;
 
@@ -538,11 +542,13 @@ psf_open_fd (PSF_FILE * pfile)
 	** be optimised out. This is meant to catch the problems caused by
 	** "sfconfig.h" being included after <stdio.h>.
 	*/
+	/*
 	if (sizeof (off_t) != sizeof (sf_count_t))
 	{	puts ("\n\n*** Fatal error : sizeof (off_t) != sizeof (sf_count_t)") ;
 		puts ("*** This means that libsndfile was not configured correctly.\n") ;
 		exit (1) ;
 		} ;
+	*/
 
 	switch (pfile->mode)
 	{	case SFM_READ :
