@@ -107,7 +107,7 @@ class SndfileHandle
 
 		int command (int cmd, void *data, int datasize) ;
 
-		sf_count_t	seek (sf_count_t frames, int whence) ;
+		virtual sf_count_t	seek (sf_count_t frames, int whence) ;
 
 		void writeSync (void) ;
 
