@@ -41,7 +41,9 @@
 #define HAVE_ENDIAN_H 1
 
 /* Will be set to 1 if flac, ogg and vorbis are available. */
-#define HAVE_EXTERNAL_LIBS 0
+#define HAVE_VORBIS 1
+
+#define HAVE_FLAC 0
 
 /* Set to 1 if the compile supports the struct hack. */
 #define HAVE_FLEXIBLE_ARRAY 1

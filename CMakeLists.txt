@@ -110,5 +110,10 @@ set(SNDFILE_SOURCES
 include_directories(.)
 include_directories(G72x)
 include_directories(GSM610)
+include_directories(libvorbis/include)
+include_directories(libvorbis/libogg/include)
+
+add_subdirectory(libvorbis)
 
 add_library(sndfile ${SNDFILE_SOURCES})
+target_link_libraries(sndfile vorbis)

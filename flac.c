@@ -29,7 +29,7 @@
 #include	"sndfile.h"
 #include	"common.h"
 
-#if HAVE_EXTERNAL_LIBS
+#if HAVE_FLAC
 
 #include	<FLAC/stream_decoder.h>
 #include	<FLAC/stream_encoder.h>
@@ -1312,7 +1312,7 @@ flac_seek (SF_PRIVATE *psf, int UNUSED (mode), sf_count_t offset)
 	return ((sf_count_t) -1) ;
 } /* flac_seek */
 
-#else /* HAVE_EXTERNAL_LIBS */
+#else /* HAVE_FLAC */
 
 int
 flac_open	(SF_PRIVATE *psf)
