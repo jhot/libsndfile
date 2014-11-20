@@ -1,9 +1,14 @@
-LOCAL_PATH := $(call my-dir)
+SNDFILE_PATH := $(call my-dir)
+LOCAL_PATH := $(SNDFILE_PATH)
+
+include $(call all-subdir-makefiles)
 
 include $(CLEAR_VARS)
 
-LOCAL_MODULE     := sndfile
-LOCAL_C_INCLUDES := $(LOCAL_PATH)
+LOCAL_PATH := $(SNDFILE_PATH)
+LOCAL_MODULE := sndfile
+LOCAL_SHARED_LIBRARIES := libvorbis
+LOCAL_C_INCLUDES := $(LOCAL_PATH) $(LOCAL_PATH)/libvorbis/include $(LOCAL_PATH)/libvorbis/libogg/include
 
 LIBGSM_SOURCE_FILES := GSM610/add.c GSM610/code.c GSM610/decode.c GSM610/gsm_create.c \
         GSM610/gsm_decode.c GSM610/gsm_destroy.c GSM610/gsm_encode.c \
