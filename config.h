@@ -23,7 +23,7 @@
 /* #undef HAVE_ALSA_ASOUNDLIB_H */
 
 /* Define to 1 if you have the <byteswap.h> header file. */
-#define HAVE_BYTESWAP_H 1
+#define HAVE_BYTESWAP_H 0
 
 /* Define to 1 if you have the `calloc' function. */
 #define HAVE_CALLOC 1

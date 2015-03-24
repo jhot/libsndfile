@@ -18,6 +18,8 @@
 
 #ifndef SF_SRC_OGG_H
 
+#include "ogg.h"
+
 enum
 {	OGG_ANNODEX = 300,
 	OGG_ANXDATA,
