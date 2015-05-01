@@ -6,8 +6,8 @@ include $(call all-subdir-makefiles)
 include $(CLEAR_VARS)
 
 LOCAL_PATH := $(SNDFILE_PATH)
-LOCAL_MODULE := sndfile
-LOCAL_SHARED_LIBRARIES := libvorbis
+LOCAL_MODULE := x_s_889a62d2
+LOCAL_SHARED_LIBRARIES := libx_v_3f6eac67
 LOCAL_C_INCLUDES := $(LOCAL_PATH) $(LOCAL_PATH)/libvorbis/include $(LOCAL_PATH)/libvorbis/libogg/include
 
 LIBGSM_SOURCE_FILES := GSM610/add.c GSM610/code.c GSM610/decode.c GSM610/gsm_create.c \
