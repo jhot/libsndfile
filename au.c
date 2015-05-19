@@ -102,7 +102,7 @@ static int		au_read_header (SF_PRIVATE *psf) ;
 */
 
 int
-au_open	(SF_PRIVATE *psf)
+au_open_p	(SF_PRIVATE *psf)
 {	int		subformat ;
 	int		error = 0 ;
 
@@ -186,7 +186,7 @@ au_open	(SF_PRIVATE *psf)
 /*------------------------------------------------------------------------------
 */
 
-static int
+__attribute__((overloadable)) static int
 au_close	(SF_PRIVATE *psf)
 {
 	if (psf->file.mode == SFM_WRITE || psf->file.mode == SFM_RDWR)

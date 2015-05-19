@@ -70,11 +70,9 @@
 
 #if HAVE_VORBIS
 
-#include <ogg/ogg.h>
-#include <vorbis/codec.h>
-#include <vorbis/vorbisenc.h>
-
-#include "ogg.h"
+#include "ogg-wrapper.h"
+#include "codec.h"
+#include "vorbisenc.h"
 
 typedef int convert_func (int, void *, int, int, float **) ;
 

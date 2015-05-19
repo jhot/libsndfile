@@ -1,2 +1,5 @@
 *.o
 *.a
+
+# OS X
+.DS_Store

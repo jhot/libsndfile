@@ -36,9 +36,7 @@
 
 #if HAVE_VORBIS
 
-#include <ogg/ogg.h>
-
-#include "ogg.h"
+#include "ogg-wrapper.h"
 
 static int	ogg_close (SF_PRIVATE *psf) ;
 static int	ogg_stream_classify (SF_PRIVATE *psf, OGG_PRIVATE * odata) ;
