@@ -64,7 +64,6 @@ set(SNDFILE_SOURCES
     ms_adpcm.c
     nist.c
     ogg.c
-    ogg.h
     ogg_pcm.c
     ogg_speex.c
     ogg_vorbis.c
@@ -111,7 +110,9 @@ include_directories(.)
 include_directories(G72x)
 include_directories(GSM610)
 include_directories(libvorbis/include)
+include_directories(libvorbis/include/vorbis)
 include_directories(libvorbis/libogg/include)
+include_directories(libvorbis/libogg/include/ogg)
 
 add_subdirectory(libvorbis)
 
